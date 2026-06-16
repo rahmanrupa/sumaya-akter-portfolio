@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumaya Akter | Pharmaceutical Sciences Portfolio</title>
+
+<style>
+:root{
+  --paper:#f4efe3;
+  --ink:#102019;
+  --muted:#59645f;
+  --green:#335f50;
+  --gold:#bd862f;
+  --line:#cec3aa;
+  --dark:#102019;
+  --white:#fffaf0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:radial-gradient(circle at top left,rgba(255,255,255,.9),transparent 34rem),var(--paper);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 60px));margin:auto}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(244,239,227,.96);
+  border-top:4px solid var(--gold);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  width:min(1460px,calc(100% - 70px));
+  margin:auto;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-family:Georgia,serif;
+  font-size:25px;
+  font-weight:900;
+}
+.logo span{color:var(--gold)}
+.nav-links{
+  display:flex;
+  gap:28px;
+  font-weight:800;
+  color:var(--muted);
+  letter-spacing:.8px;
+  font-size:14px;
+}
+.nav-links a:hover{color:var(--ink)}
+
+.hero{
+  min-height:calc(100vh - 76px);
+  display:grid;
+  grid-template-columns:1.05fr .75fr;
+  gap:62px;
+  align-items:center;
+  padding:64px 0 72px;
+}
+.eyebrow,.num,.date,.type,.skill h3,.cert-heading{
+  color:var(--gold);
+  font-family:"Courier New",monospace;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+.eyebrow{
+  margin-bottom:24px;
+  font-size:14px;
+}
+.eyebrow:before{
+  content:"";
+  display:inline-block;
+  width:48px;
+  height:1px;
+  background:var(--gold);
+  vertical-align:middle;
+  margin-right:16px;
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+h1{
+  margin:0;
+  font-size:clamp(48px,5.5vw,86px);
+  line-height:.96;
+  letter-spacing:-3px;
+}
+h1 em{
+  display:block;
+  color:var(--gold);
+  font-style:italic;
+}
+.hero p{
+  max-width:720px;
+  font-size:20px;
+  color:#2e3834;
+  margin:28px 0 0;
+}
+.hero strong{color:var(--green)}
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:34px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:148px;
+  min-height:52px;
+  padding:12px 19px;
+  border:1px solid var(--ink);
+  border-radius:3px;
+  font-weight:900;
+  font-size:15px;
+}
+.btn.dark{background:var(--ink);color:var(--white)}
+
+.profile-card{
+  position:relative;
+  width:min(340px,100%);
+  margin-left:auto;
+  border:1px solid var(--gold);
+  border-radius:6px;
+  padding:28px;
+  background:rgba(239,231,216,.65);
+  box-shadow:18px 20px 0 rgba(51,95,80,.88);
+}
+.initials{
+  height:260px;
+  display:grid;
+  place-items:center;
+  border-radius:4px;
+  background:rgba(255,255,255,.42);
+  border:1px solid var(--line);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:86px;
+  font-weight:900;
+  color:var(--green);
+}
+.profile-label{
+  position:absolute;
+  left:26px;
+  bottom:-20px;
+  background:var(--green);
+  color:white;
+  padding:10px 16px;
+  border-radius:4px;
+  font-weight:900;
+  letter-spacing:1px;
+  font-size:14px;
+}
+
+.section{padding:86px 0}
+.section-title{
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  gap:22px;
+  align-items:center;
+  margin-bottom:56px;
+}
+.section-title h2{
+  margin:0;
+  font-size:clamp(40px,5vw,62px);
+  letter-spacing:-2px;
+}
+.line{height:1px;background:var(--line)}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:62px;
+}
+.copy{
+  font-size:20px;
+  color:#38443f;
+}
+.copy p{margin:0 0 26px}
+.copy strong{color:var(--ink)}
+
+.glance,.card,.edu-card{
+  background:rgba(239,231,216,.76);
+  border:1px solid var(--line);
+  border-radius:7px;
+  padding:32px;
+}
+.glance h3{
+  margin:0 0 20px;
+  color:var(--green);
+  font-family:"Courier New",monospace;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+.row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:18px;
+  padding:15px 0;
+  border-top:1px dashed var(--line);
+}
+.row:first-of-type{border-top:0}
+.row span:first-child{color:var(--muted)}
+.row span:last-child{text-align:right;font-weight:900}
+
+.timeline{border-top:1px solid var(--line)}
+.role{
+  display:grid;
+  grid-template-columns:245px 1fr;
+  gap:70px;
+  padding:48px 0;
+  border-bottom:1px solid var(--line);
+}
+.place{color:var(--muted);margin-top:10px}
+.role h3{font-size:30px;margin:0}
+.company{
+  color:var(--green);
+  font-weight:900;
+  font-size:18px;
+  margin:4px 0 16px;
+}
+.role li{
+  font-size:17px;
+  margin-bottom:9px;
+}
+.role li::marker{color:var(--gold)}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+}
+.card h3{
+  font-size:28px;
+  line-height:1.15;
+  margin:0 0 8px;
+}
+.org{
+  color:var(--green);
+  font-weight:900;
+  margin-bottom:16px;
+}
+.card p,.card li{
+  font-size:16px;
+  color:#33413c;
+}
+.card ul{padding-left:20px}
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+.pill{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.35);
+  border-radius:999px;
+  padding:8px 13px;
+  font-size:14px;
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.skill h3{
+  color:var(--green);
+  font-size:15px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:13px;
+}
+
+.edu-card{
+  display:grid;
+  grid-template-columns:1fr 170px;
+  align-items:center;
+  gap:30px;
+  margin-bottom:20px;
+}
+.edu-card h3{
+  font-size:27px;
+  margin:0 0 6px;
+}
+.school{
+  color:var(--green);
+  font-weight:900;
+}
+.gpa{
+  text-align:right;
+  font-family:"Courier New",monospace;
+  font-weight:900;
+}
+.gpa span{
+  display:block;
+  color:var(--muted);
+  font-family:Arial;
+  font-weight:400;
+  margin-top:6px;
+}
+
+.contact-panel{
+  background:linear-gradient(135deg,rgba(16,32,25,.98),rgba(25,40,31,.95));
+  color:var(--white);
+  border-radius:8px;
+  padding:74px 40px;
+  text-align:center;
+}
+.contact-panel h2{
+  font-size:clamp(42px,5vw,68px);
+  margin:0;
+}
+.contact-panel h2 em{color:var(--gold)}
+.contact-panel p{
+  font-size:19px;
+  color:#d8d2c6;
+  max-width:760px;
+  margin:24px auto 34px;
+}
+.contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:16px;
+}
+.contact-links a{
+  min-width:170px;
+  border:1px solid rgba(255,255,255,.35);
+  padding:15px 17px;
+  font-weight:900;
+}
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:34px;
+  font-family:"Courier New",monospace;
+}
+
+@media(max-width:950px){
+  .hero,.about-grid,.grid-2,.skills-grid,.role{grid-template-columns:1fr}
+  .profile-card{margin:0}
+  .nav-inner{
+    height:auto;
+    align-items:flex-start;
+    flex-direction:column;
+    padding:16px 0;
+  }
+  .nav-links{
+    gap:14px;
+    font-size:13px;
+    flex-wrap:wrap;
+  }
+  .section-title{grid-template-columns:auto 1fr}
+  .line{grid-column:1/-1}
+}
+@media(max-width:650px){
+  .container{width:min(100% - 28px,1320px)}
+  h1{font-size:50px}
+  .hero p,.copy{font-size:18px}
+  .hero-buttons{flex-direction:column}
+  .row,.edu-card{grid-template-columns:1fr}
+  .row span:last-child,.gpa{text-align:left}
+}
+</style>
+</head>
+
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#home">SA<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#research">RESEARCH</a>
+      <a href="#education">EDUCATION</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero container">
+  <div>
+    <div class="eyebrow">Pharmaceutical Sciences - Dhaka, Bangladesh</div>
+    <h1>Sumaya <em>Akter.</em></h1>
+    <p>
+      Motivated pharmacy graduate seeking a <strong>fully funded postgraduate opportunity</strong>
+      in Pharmaceutical Sciences, with interests in computational drug design, RP-HPLC method
+      development, QbD-based formulation, and AI-assisted rational drug development.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn dark" href="#research">View Research</a>
+      <a class="btn" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="initials">SA</div>
+    <div class="profile-label">OPEN TO POSTGRADUATE RESEARCH</div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">01</span><h2>About</h2><div class="line"></div></div>
+
+    <div class="about-grid">
+      <div class="copy">
+        <p>
+          I am a <strong>pharmacy graduate</strong> from East West University with a strong
+          academic foundation in pharmaceutical sciences, computational drug design,
+          formulation development, and analytical method development.
+        </p>
+        <p>
+          My technical interests include <strong>Quality by Design</strong>, RP-HPLC method
+          development and validation, molecular docking, molecular simulation, pharmacokinetic
+          profiling, toxicity analysis, and AI-assisted design of potent molecules.
+        </p>
+        <p>
+          My long-term goal is to contribute to rational drug development by designing effective
+          molecules and delivering them in safe, optimized dosage forms that improve therapeutic
+          outcomes.
+        </p>
+      </div>
+
+      <aside class="glance">
+        <h3>At A Glance</h3>
+        <div class="row"><span>Location</span><span>Dhaka, Bangladesh</span></div>
+        <div class="row"><span>Focus</span><span>Pharmaceutical Sciences / Drug Design / QbD</span></div>
+        <div class="row"><span>Degree</span><span>Bachelor of Pharmacy</span></div>
+        <div class="row"><span>Result</span><span>3.82 / 4.00, ranked top 3%</span></div>
+        <div class="row"><span>IELTS</span><span>Overall 7.0</span></div>
+        <div class="row"><span>Status</span><span>Seeking fully funded postgraduate opportunity</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">02</span><h2>Experience</h2><div class="line"></div></div>
+
+    <div class="timeline">
+      <article class="role">
+        <div><div class="date">2026 - Ongoing</div><div class="place">ABCD Laboratory Bangladesh</div></div>
+        <div>
+          <h3>Junior Research Collaborator</h3>
+          <div class="company">Volunteering</div>
+          <ul>
+            <li>Contributing as a junior research collaborator in ongoing pharmaceutical and computational research activities.</li>
+            <li>Project details to be added as the current research collaboration progresses.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div><div class="date">2026</div><div class="place">ABCD Laboratory, Bangladesh</div></div>
+        <div>
+          <h3>Research Trainee</h3>
+          <div class="company">Computational Drug Discovery</div>
+          <ul>
+            <li>Constructed and curated chemical libraries for small molecules and proteins.</li>
+            <li>Performed molecular docking for pose prediction and binding interaction analysis.</li>
+            <li>Used machine learning concepts for chemical identifiers and molecular fingerprints.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div><div class="date">2025</div><div class="place">Gazipur, Dhaka</div></div>
+        <div>
+          <h3>Intern</h3>
+          <div class="company">Synovia Pharma PLC</div>
+          <ul>
+            <li>Gained hands-on exposure to pharmaceutical formulation, manufacturing, quality control, product development, and procurement.</li>
+            <li>Developed practical knowledge of microbiology, quality assurance, and quality systems.</li>
+            <li>Learned Good Manufacturing Practices and pharmaceutical documentation processes.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div><div class="date">2024</div><div class="place">Dhaka, Bangladesh</div></div>
+        <div>
+          <h3>Undergraduate Teaching Assistant</h3>
+          <div class="company">East West University</div>
+          <ul>
+            <li>Prepared teaching materials including lecture slides, class notes, and supplementary resources.</li>
+            <li>Conducted tutorial sessions and short presentations to support student learning.</li>
+            <li>Supported grading and assessment of assignments, quizzes, and examinations.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">03</span><h2>Research Skills</h2><div class="line"></div></div>
+
+    <div class="skills-grid">
+      <div class="skill">
+        <h3>Wet Lab Skills</h3>
+        <div class="pills">
+          <span class="pill">Dosage Form Development</span>
+          <span class="pill">QbD Approach</span>
+          <span class="pill">Chemical Synthesis</span>
+          <span class="pill">Standard Curves</span>
+          <span class="pill">HPLC</span>
+          <span class="pill">TLC</span>
+          <span class="pill">UV-Vis Spectroscopy</span>
+          <span class="pill">Method Validation</span>
+          <span class="pill">Serial Dilution</span>
+          <span class="pill">Microbial Colony Counting</span>
+        </div>
+      </div>
+
+      <div class="skill">
+        <h3>Dry Lab Skills</h3>
+        <div class="pills">
+          <span class="pill">Cheminformatics</span>
+          <span class="pill">Target Identification</span>
+          <span class="pill">Molecular Docking</span>
+          <span class="pill">Molecular Simulation</span>
+          <span class="pill">Data Interpretation</span>
+          <span class="pill">Pharmacokinetic Profiling</span>
+          <span class="pill">Toxicity Analysis</span>
+          <span class="pill">Machine Learning in Drug Discovery</span>
+        </div>
+      </div>
+
+      <div class="skill">
+        <h3>Tools</h3>
+        <div class="pills">
+          <span class="pill">ChemDraw</span>
+          <span class="pill">BIOVIA Draw</span>
+          <span class="pill">Discovery Studio</span>
+          <span class="pill">Gaussian</span>
+          <span class="pill">Gauss View</span>
+          <span class="pill">AutoDock Vina</span>
+          <span class="pill">PyRx</span>
+          <span class="pill">NAMD</span>
+          <span class="pill">VMD</span>
+          <span class="pill">UCSF Chimera</span>
+          <span class="pill">PyMOL</span>
+        </div>
+      </div>
+
+      <div class="skill">
+        <h3>Laboratory Instruments</h3>
+        <div class="pills">
+          <span class="pill">HPLC</span>
+          <span class="pill">UV-Visible Spectrophotometer</span>
+          <span class="pill">FTIR Spectrophotometer</span>
+          <span class="pill">Differential Scanning Calorimeter</span>
+          <span class="pill">Dissolution Tester</span>
+          <span class="pill">Disintegration Tester</span>
+          <span class="pill">Centrifuge</span>
+          <span class="pill">Micropipette</span>
+          <span class="pill">Cell Culture Equipment</span>
+        </div>
+      </div>
+
+      <div class="skill">
+        <h3>Statistics & Writing</h3>
+        <div class="pills">
+          <span class="pill">Origin</span>
+          <span class="pill">SciDAVis</span>
+          <span class="pill">Excel</span>
+          <span class="pill">Literature Review</span>
+          <span class="pill">Project Planning</span>
+          <span class="pill">Methodology Development</span>
+          <span class="pill">Statistical Analysis</span>
+          <span class="pill">Result Interpretation</span>
+          <span class="pill">Scientific Writing</span>
+        </div>
+      </div>
+
+      <div class="skill">
+        <h3>Documentation</h3>
+        <div class="pills">
+          <span class="pill">Microsoft Word</span>
+          <span class="pill">EndNote</span>
+          <span class="pill">Mendeley</span>
+          <span class="pill">Zotero</span>
+          <span class="pill">Project Writing</span>
+          <span class="pill">Paper Writing</span>
+          <span class="pill">Bengali Native</span>
+          <span class="pill">English Proficient</span>
+          <span class="pill">IELTS 7.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">04</span><h2>Scientific Work</h2><div class="line"></div></div>
+
+    <div class="grid-2">
+      <article class="card">
+        <div class="type">Accepted for Publication</div>
+        <h3>Immediate-Release Vonoprazan Fumarate Tablets Using QbD</h3>
+        <div class="org">Research Journal of Pharmacy and Technology</div>
+        <p>
+          S. Akter, M.J. Hossain, L. Akther, A.P. Araf, J.A. Chowdhury, M.A. Islam.
+          "Design, Optimization, and Evaluation of Immediate-Release Vonoprazan Fumarate Tablets
+          Using a Quality by Design Approach." In Press / Accepted.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="type">Manuscript Under Review</div>
+        <h3>QbD-Based RP-HPLC Method for Vonoprazan Fumarate</h3>
+        <div class="org">Jordan Journal of Pharmaceutical Sciences</div>
+        <p>
+          M.J. Hossain, L. Akhter, S. Akter, A.P. Araf, M.A. Islam.
+          "Quality by Design-Based Development and Validation of an RP-HPLC Method for Vonoprazan Fumarate."
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="type">Manuscript Under Review</div>
+        <h3>Stability-Indicating RP-HPLC Method for Sotagliflozin</h3>
+        <div class="org">Journal of Pharmaceutical and Biomedical Analysis</div>
+        <p>
+          M.J. Hossain, M.R. Islam, J.A. Chowdhury, L. Akhter, M.A. Haque, S. Akter, M.Z. Islam.
+          "Implementation of Analytical Quality by Design to Develop a Stability-Indicating RP-HPLC Method for Sotagliflozin."
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="type">Published Abstract</div>
+        <h3>Vonoprazan Fumarate Immediate Release Dosage Form</h3>
+        <div class="org">International Conference on Pharmaceutical & Health Sciences 2024</div>
+        <p>
+          Development of immediate release dosage form of Vonoprazan fumarate using QbD approach and
+          comparison of efficacy with marketed products.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">05</span><h2>Education</h2><div class="line"></div></div>
+
+    <div class="edu-card">
+      <div>
+        <h3>Bachelor of Pharmacy</h3>
+        <div class="school">Department of Pharmacy, East West University</div>
+        <p>
+          Thesis: Design, Optimization, and Evaluation of Immediate-Release Vonoprazan Fumarate Tablets
+          Utilizing QbD Approach.
+        </p>
+      </div>
+      <div class="gpa">3.82 / 4.00<span>2024 - Top 3%</span></div>
+    </div>
+
+    <h3 class="cert-heading">Academic Honors & Certifications</h3>
+    <div class="pills">
+      <span class="pill">Workshop on Computer Simulation and Theory of Macromolecules - H&uuml;nfeld, Germany - 2026</span>
+      <span class="pill">CCDC Virtual Workshop: Protein-Ligand Docking Informed by Constraints Using GOLD - 2026</span>
+      <span class="pill">Workshop on Molecular Simulation - East West University - 2024</span>
+      <span class="pill">Merit Scholarship - East West University - 2018-2019</span>
+      <span class="pill">Medha Lalon Scholarship - East West University - 2019</span>
+      <span class="pill">Basis Sets and Pseudopotentials - Ames Laboratory / Iowa State University - 2025</span>
+      <span class="pill">Machine Learning in Drug Discovery - EMBL-EBI - 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title"><span class="num">06</span><h2>Activities</h2><div class="line"></div></div>
+
+    <div class="grid-2">
+      <article class="card">
+        <div class="type">Volunteer Work</div>
+        <h3>Seminar Library Volunteer</h3>
+        <div class="org">East West University - 2024</div>
+        <p>Volunteered at the Seminar Library, supporting academic learning resources and student access to reference materials.</p>
+      </article>
+
+      <article class="card">
+        <div class="type">Poster Presentation</div>
+        <h3>Pharma Carnival Poster Presentation</h3>
+        <div class="org">East West University - 2018</div>
+        <p>Presented a poster at Pharma Carnival, East West University.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-panel">
+      <h2>Let's <em>connect.</em></h2>
+      <p>
+        Open to fully funded postgraduate research opportunities in Pharmaceutical Sciences,
+        computational drug design, formulation development, RP-HPLC method development, QbD,
+        molecular docking, and AI-assisted rational drug development.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:akter.sumayaewu@gmail.com">Email</a>
+        <a href="tel:+8801648196189">Phone</a>
+        <a href="https://www.linkedin.com/in/sumaya-akter-3a7254383/" target="_blank">LinkedIn</a>
+        <a href="#">ORCID</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>&copy; 2026 Sumaya Akter - Pharmaceutical Sciences Portfolio</footer>
+</body>
+</html>
