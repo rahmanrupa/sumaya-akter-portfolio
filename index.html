@@ -132,21 +132,19 @@ h1 em{
   margin-left:auto;
   border:1px solid var(--gold);
   border-radius:6px;
-  padding:28px;
+  padding:12px;
   background:rgba(239,231,216,.65);
   box-shadow:18px 20px 0 rgba(51,95,80,.88);
 }
-.initials{
-  height:260px;
-  display:grid;
-  place-items:center;
+.profile-photo{
+  display:block;
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  object-position:center top;
   border-radius:4px;
-  background:rgba(255,255,255,.42);
+  background:white;
   border:1px solid var(--line);
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:86px;
-  font-weight:900;
-  color:var(--green);
 }
 .profile-label{
   position:absolute;
@@ -405,7 +403,7 @@ footer{
   </div>
 
   <div class="profile-card">
-    <div class="initials">SA</div>
+    <img class="profile-photo" src="./profile.jpg?v=2" alt="Sumaya Akter">
     <div class="profile-label">OPEN TO POSTGRADUATE RESEARCH</div>
   </div>
 </section>
